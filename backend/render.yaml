@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: cryptojail-api
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python server.py
+    envVars:
+      - key: PORT
+        value: 10000
+      - key: MONGO_URL
+        sync: false
+      - key: DB_NAME  
+        value: cryptojail
+      - key: CORS_ORIGINS
+        sync: false
